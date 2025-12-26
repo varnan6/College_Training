@@ -1,18 +1,18 @@
 package B2.Day_3;
 
-import Java.Node;
+import Java.ListNode;
 
 public class InsertionSortOnSinglyLL {
 
-    static Node insertionSortLL(Node head) {
+    static ListNode insertionSortLL(ListNode head) {
 
-        Node dummy = new Node(0);
-        Node curr = head;
+        ListNode dummy = new ListNode(0);
+        ListNode curr = head;
 
         while (curr != null) {
 
-            Node next = curr.next;
-            Node prev = dummy;
+            ListNode next = curr.next;
+            ListNode prev = dummy;
 
             while (prev.next != null && prev.next.value < curr.value) {
                 prev = prev.next;
@@ -32,13 +32,13 @@ public class InsertionSortOnSinglyLL {
         int[][] testCases = { { 1, 2, 3, 4 }, { 3, 1, 5, 2, 6, 7 }, { 5, 4, 3, 2, 1 } };
 
         for (int i = 0; i < testCases.length; i++) {
-            Node head = null;
+            ListNode head = null;
             for (int j = 0; j < testCases[i].length; j++) {
-                Node newNode = new Node(testCases[i][j]);
+                ListNode newNode = new ListNode(testCases[i][j]);
                 if (head == null) {
                     head = newNode;
                 } else {
-                    Node temp = head;
+                    ListNode temp = head;
                     while (temp.next != null) {
                         temp = temp.next;
                     }
@@ -46,7 +46,7 @@ public class InsertionSortOnSinglyLL {
                 }
             }
 
-            Node sortedHead = insertionSortLL(head);
+            ListNode sortedHead = insertionSortLL(head);
 
             while (sortedHead != null) {
                 System.out.print("->" + sortedHead.value);

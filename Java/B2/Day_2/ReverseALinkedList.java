@@ -1,14 +1,14 @@
 package B2.Day_2;
 
-import Java.Node;
+import Java.ListNode;
 
 public class ReverseALinkedList {
 
-    static Node reverseLL(Node head) {
+    static ListNode reverseLL(ListNode head) {
 
-        Node prev = null;
-        Node curr = head;
-        Node next = head.next;
+        ListNode prev = null;
+        ListNode curr = head;
+        ListNode next = head.next;
 
         while (curr != null) {
 
@@ -32,20 +32,20 @@ public class ReverseALinkedList {
 
         for (int[] test : testCases) {
 
-            Node head = null;
-            Node tail = null;
+            ListNode head = null;
+            ListNode tail = null;
 
             for (int n : test) {
                 if (head == null) {
-                    head = new Node(n);
+                    head = new ListNode(n);
                     tail = head;
                 } else {
-                    tail.next = new Node(n);
+                    tail.next = new ListNode(n);
                     tail = tail.next;
                 }
             }
 
-            Node reverse = reverseLL(head);
+            ListNode reverse = reverseLL(head);
 
             while (reverse != null) {
                 System.out.print("->" + reverse.value);
